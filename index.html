@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Beyond The Brush Wexford | Painting, Decorating & Specialist Finishes</title>
+
+    <style>
+
+        /* CSS RESET & VARIABLES */
+
+        :root {
+
+            --primary: #1c1c1c;
+
+            --accent: #d4af37; /* Gold tone matching premium plaster branding */
+
+            --light: #f9f9f9;
+
+            --dark: #111111;
+
+            --gray: #666666;
+
+            --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+
+        body {
+
+            font-family: var(--font);
+
+            line-height: 1.6;
+
+            color: var(--dark);
+
+            background-color: #ffffff;
+
+        }
+
+
+
+        /* NAVIGATION */
+
+        header {
+
+            background-color: var(--primary);
+
+            position: fixed;
+
+            width: 100%;
+
+            top: 0;
+
+            z-index: 1000;
+
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+        }
+
+
+
+        .nav-container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 15px 20px;
+
+        }
+
+
+
+        .logo {
+
+            color: #ffffff;
+
+            font-size: 1.5rem;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+        }
+
+
+
+        .logo span {
+
+            color: var(--accent);
+
+        }
+
+
+
+        nav ul {
+
+            display: flex;
+
+            list-style: none;
+
+        }
+
+
+
+        nav ul li {
+
+            margin-left: 20px;
+
+        }
+
+
+
+        nav ul li a {
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-weight: 500;
+
+            transition: color 0.3s;
+
+        }
+
+
+
+        nav ul li a:hover {
+
+            color: var(--accent);
+
+        }
+
+
+
+        /* HERO SECTION */
+
+        .hero {
+
+            height: 80vh;
+
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            color: #ffffff;
+
+            padding: 0 20px;
+
+            margin-top: 60px;
+
+        }
+
+
+
+        .hero-content h1 {
+
+            font-size: 3rem;
+
+            margin-bottom: 15px;
+
+            letter-spacing: 2px;
+
+        }
+
+
+
+        .hero-content p {
+
+            font-size: 1.2rem;
+
+            margin-bottom: 30px;
+
+            max-width: 600px;
+
+            margin-left: auto;
+
+            margin-right: auto;
+
+        }
+
+
+
+        .btn {
+
+            background-color: var(--accent);
+
+            color: var(--primary);
+
+            padding: 12px 30px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border-radius: 4px;
+
+            transition: background 0.3s, transform 0.2s;
+
+            display: inline-block;
+
+        }
+
+
+
+        .btn:hover {
+
+            background-color: #fff;
+
+            transform: translateY(-2px);
+
+        }
+
+
+
+        /* SERVICES SECTION */
+
+        .section {
+
+            padding: 80px 20px;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        .section-title {
+
+            text-align: center;
+
+            font-size: 2.2rem;
+
+            margin-bottom: 50px;
+
+            position: relative;
+
+        }
+
+
+
+        .section-title::after {
+
+            content: '';
+
+            display: block;
+
+            width: 60px;
+
+            height: 3px;
+
+            background-color: var(--accent);
+
+            margin: 10px auto 0;
+
+        }
+
+
+
+        .services-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 30px;
+
+        }
+
+
+
+        .service-card {
+
+            background: var(--light);
+
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+
+            transition: transform 0.3s;
+
+        }
+
+
+
+        .service-card:hover {
+
+            transform: translateY(-5px);
+
+        }
+
+
+
+        .service-img {
+
+            height: 220px;
+
+            width: 100%;
+
+            object-fit: cover;
+
+        }
+
+
+
+        .service-info {
+
+            padding: 25px;
+
+        }
+
+
+
+        .service-info h3 {
+
+            margin-bottom: 10px;
+
+            font-size: 1.4rem;
+
+            color: var(--primary);
+
+        }
+
+
+
+        .badge {
+
+            background: var(--accent);
+
+            color: #fff;
+
+            font-size: 0.75rem;
+
+            padding: 3px 8px;
+
+            border-radius: 3px;
+
+            display: inline-block;
+
+            margin-bottom: 10px;
+
+            font-weight: bold;
+
+        }
+
+
+
+        .disclaimer-box {
+
+            margin-top: 40px;
+
+            background-color: #fff8e7;
+
+            border-left: 4px solid var(--accent);
+
+            padding: 15px 20px;
+
+            font-size: 0.95rem;
+
+            border-radius: 0 4px 4px 0;
+
+        }
+
+
+
+        /* GALLERY & LIVE FEED SECTION */
+
+        .gallery-section {
+
+            background-color: var(--light);
+
+        }
+
+
+
+        .instagram-placeholder {
+
+            background: #ffffff;
+
+            border: 2px dashed #ccc;
+
+            border-radius: 8px;
+
+            padding: 40px 20px;
+
+            text-align: center;
+
+            color: var(--gray);
+
+            max-width: 700px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        /* CONTACT FORM */
+
+        .contact-container {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+
+        }
+
+
+
+        @media (max-width: 768px) {
+
+            .contact-container { grid-template-columns: 1fr; }
+
+            .hero-content h1 { font-size: 2.2rem; }
+
+            nav ul { display: none; } /* Simplified mobile view */
+
+        }
+
+
+
+        .contact-info h3 {
+
+            margin-bottom: 15px;
+
+            font-size: 1.5rem;
+
+        }
+
+
+
+        .contact-info p {
+
+            margin-bottom: 10px;
+
+            color: var(--gray);
+
+        }
+
+
+
+        form {
+
+            display: flex;
+
+            flex-direction: column;
+
+        }
+
+
+
+        .form-group {
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        label {
+
+            display: block;
+
+            margin-bottom: 5px;
+
+            font-weight: 500;
+
+        }
+
+
+
+        input, select, textarea {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 4px;
+
+            font-family: var(--font);
+
+        }
+
+
+
+        /* FOOTER */
+
+        footer {
+
+            background: var(--primary);
+
+            color: #ffffff;
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            margin-top: 60px;
+
+            font-size: 0.9rem;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <header>
+
+        <div class="nav-container">
+
+            <div class="logo">Beyond The Brush <span>Wexford</span></div>
+
+            <nav>
+
+                <ul>
+
+                    <li><a href="#home">Home</a></li>
+
+                    <li><a href="#services">Services</a></li>
+
+                    <li><a href="#gallery">Gallery</a></li>
+
+                    <li><a href="#contact">Contact & Quotes</a></li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <h1>Beyond The Brush</h1>
+
+            <p>Decomin-Trained Specialist Finishes, Premium Painting, Decorating, & Property Maintenance across Wexford.</p>
+
+            <a href="#contact" class="btn">Get a Free Estimate</a>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="services" class="section">
+
+        <h2 class="section-title">Our Services</h2>
+
+        <div class="services-grid">
+
+            
+
+            <div class="service-card">
+
+                <img class="service-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=500" alt="Venetian Plaster">
+
+                <div class="service-info">
+
+                    <span class="badge">Decomin Certified</span>
+
+                    <h3>Specialist Finishes</h3>
+
+                    <p>Stunning, authentic Venetian Plastering and high-end luxury wall finishes tailored perfectly for feature walls and premium spaces.</p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="service-card">
+
+                <img class="service-img" src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=500" alt="Painting and Decorating">
+
+                <div class="service-info">
+
+                    <span class="badge">Domestic & Contract</span>
+
+                    <h3>Painting & Decorating</h3>
+
+                    <p>Internal and external painting executed cleanly and professionally. Available for residential homes, custom design plans, and commercial contracts.</p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="service-card">
+
+                <img class="service-img" src="https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?auto=format&fit=crop&q=80&w=500" alt="Property Maintenance">
+
+                <div class="service-info">
+
+                    <span class="badge">General Labour</span>
+
+                    <h3>Property & Garden Clearance</h3>
+
+                    <p>Thorough house and garden clear-outs. Perfect for preparing properties for the market, shifting overgrowth, or general labor needs.</p>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <div class="disclaimer-box">
+
+            <strong>Waste Disposal Notice:</strong> While direct environmental waste disposal transfers are not executed by us, full third-party certified waste collection and skip services can be entirely structured and organized on your behalf during property clearances.
+
+        </div>
+
+    </section>
+
+
+
+    <section id="gallery" class="section gallery-section">
+
+        <h2 class="section-title">Live Portfolio</h2>
+
+        <p style="text-align: center; margin-bottom: 30px; color: var(--gray);">See our most recent transformations updated directly from Instagram.</p>
+
+        
+
+        <div class="instagram-placeholder">
+
+            <h4>📷 Your Live Social Feed Connects Here</h4>
+
+            <p style="margin: 15px 0; font-size: 0.9rem;">To make the website instantly match Instagram and Facebook updates, replace this placeholder box with your free <strong>Smash Balloon</strong> or <strong>Elfsight</strong> Instagram widget embed code inside GoDaddy.</p>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="contact" class="section">
+
+        <h2 class="section-title">Get a Free Quote</h2>
+
+        
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <h3>Let's discuss your project.</h3>
+
+                <p>Based proudly in Wexford, operating as a fully registered sole trader for local residential work and commercial contract work alike.</p>
+
+                <p style="margin-top: 25px;"><strong>📍 Coverage:</strong> Wexford & Surrounding Regions</p>
+
+                <p><strong>💼 Business Type:</strong> Registered Sole Trader / Sub-contractor</p>
+
+            </div>
+
+
+
+            <div>
+
+                <form action="#" method="POST">
+
+                    <div class="form-group">
+
+                        <label for="name">Your Name</label>
+
+                        <input type="text" id="name" required placeholder="John Murphy">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="service">Service Needed</label>
+
+                        <select id="service" required>
+
+                            <option value="">-- Select a Service --</option>
+
+                            <option value="venetian">Venetian Plastering / Specialist Finishes</option>
+
+                            <option value="painting">General Painting & Decorating</option>
+
+                            <option value="contract">Sub-Contract Work</option>
+
+                            <option value="clearance">Garden or House Clearance</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="message">Project Details</label>
+
+                        <textarea id="message" rows="5" required placeholder="Describe your walls, room sizes, or clearance needs..."></textarea>
+
+                    </div>
+
+                    <button type="submit" class="btn" style="border: none; cursor: pointer; width: 100%;">Submit Inquiry</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <footer>
+
+        <p>&copy; 2026 Beyond The Brush Wexford. All Rights Reserved.</p>
+
+        <p style="font-size: 0.75rem; color: #aaa; margin-top: 5px;">Certified Decomin Specialist Finishes Artisan.</p>
+
+    </footer>
+
+
+
+</body>
+
+</html>
